@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te amo ★</title>
+    
+    <style>
+        /* Estilo del fondo */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* Para evitar el desbordamiento de las estrellas */
+            position: relative; /* Para posicionar la luna */
+        }
+
+        /* Estilo de las estrellas */
+        .estrella {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: parpadear 1.5s infinite alternate; /* Animación de parpadeo */
+        }
+
+        /* Animación de parpadeo */
+        @keyframes parpadear {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Estilo del contenedor */
+        .contenedor {
+            text-align: center;
+            padding-top: 20vh; /* Espaciado desde la parte superior del contenedor */
+        }
+
+        /* Estilo del texto grande */
+        h1 {
+            font-size: 5vw; /* Tamaño de fuente relativo */
+            color: #ec1249; /* Neon rosado */
+            text-shadow: 0 0 5px #050505, 0 0 10px #e4306c, 0 0 15px #ee2b6c; /* Sombra neon */
+            animation: mover 2s ease-in-out infinite alternate; /* Animación de movimiento */
+        }
+
+        /* Estilo del texto pequeño */
+        p {
+            font-size: 4vw; /* Tamaño de fuente relativo */
+            color: #ff0; /* Neon amarillo */
+            text-shadow: 0 0 5px rgb(14, 14, 13), 0 0 10px #ff0, 0 0 15px #ff0; /* Sombra neon */
+            animation: mover 2s ease-in-out infinite alternate-reverse; /* Animación de movimiento inversa */
+        }
+
+        /* Estilo del botón */
+        .boton {
+            padding: 2vh 5vw; /* Tamaño de relleno relativo */
+            background-color: #4e024e; /* Neon rosado */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 4vw; /* Tamaño de fuente relativo */
+            transition: background-color 0.3s;
+        }
+        .boton:hover {
+            background-color: #ff3e8e; /* Cambia el color de fondo al pasar el ratón sobre el botón */
+        }
+
+        /* Estilo de la luna */
+        .luna {
+            position: absolute;
+            top: 5vh; /* Posición vertical de la luna */
+            right: 5vw; /* Posición horizontal de la luna */
+            width: 10vw; /* Ancho de la luna relativo */
+            height: 10vw; /* Altura de la luna relativo */
+            border-radius: 50%; /* Forma circular */
+            background-color: #f5f5f5; /* Color gris claro */
+            box-shadow: 2vh 2vh 5vw rgba(255, 255, 255, 0.5); /* Sombra relativa */
+        }
+
+        /* Animación de movimiento */
+        @keyframes mover {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Media query para dispositivos móviles */
+        @media screen and (max-width: 600px) {
+            .contenedor {
+                padding-top: 30vh; /* Ajuste de espaciado para pantallas pequeñas */
+            }
+            h1 {
+                font-size: 8vw; /* Tamaño de fuente relativo para pantallas pequeñas */
+            }
+            p {
+                font-size: 6vw; /* Tamaño de fuente relativo para pantallas pequeñas */
+            }
+            .boton {
+                font-size: 6vw; /* Tamaño de fuente relativo para pantallas pequeñas */
+            }
+            .luna {
+                top: 5vh; /* Posición vertical de la luna para pantallas pequeñas */
+                right: 5vw; /* Posición horizontal de la luna para pantallas pequeñas */
+                width: 20vw; /* Ancho de la luna relativo para pantallas pequeñas */
+                height: 20vw; /* Altura de la luna relativo para pantallas pequeñas */
+                box-shadow: 2vh 2vh 5vw rgba(255, 255, 255, 0.5); /* Sombra relativa para pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <!-- Texto grande -->
+        <h1>"Hola, mi hermosa estrella." ★</h1>
+        <!-- Texto más pequeño -->
+        <p>Tengo algo para ti.</p>
+        <!-- Botón -->
+        <button class="boton" onclick="window.location.href='Flores.html'">Presiona el botón</button>
+    </div>
+
+    <!-- Luna -->
+    <div class="luna"></div>
+    
+    <!-- Script para generar estrellas de forma aleatoria -->
+    <script>
+        // Función para generar estrellas
+        function generarEstrellas() {
+            const cantidadEstrellas = 50; // Número de estrellas
+            const contenedor = document.body; // Contenedor de las estrellas
+
+            // Generar estrellas de forma aleatoria
+            for (let i = 0; i < cantidadEstrellas; i++) {
+                const estrella = document.createElement('div');
+                estrella.classList.add('estrella');
+                estrella.style.left = `${Math.random() * window.innerWidth}px`; // Posición horizontal aleatoria
+                estrella.style.top = `${Math.random() * window.innerHeight}px`; // Posición vertical aleatoria
+                contenedor.appendChild(estrella);
+            }
+        }
+
+        // Llamar a la función al cargar la página
+        window.onload = generarEstrellas;
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
